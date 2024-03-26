@@ -19,3 +19,7 @@ Environment:
 		- `numpy`, `pandas`, `requests`, `re`
 	- Pip: 
 		- `chess`
+
+Training Data:
+ - goes in `/training_layers_as_matrices/`
+ - available at https://huggingface.co/datasets/amistele/ml-chess-hikaru-trainingdata
