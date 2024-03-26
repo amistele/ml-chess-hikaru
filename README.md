@@ -2,7 +2,7 @@
 
 Machine learning engine for playing chess built from GM Hikaru's blitz games scraped from chess.com
  - `PLAYCHESS.ipynb`: to play chess
- - `TRAIN-ENGINE/.ipynb`: to generate a new set of weights for the engine by modifying training approach
+ - `TRAIN-ENGINE.ipynb`: to generate a new set of weights for the engine by modifying training approach
  - `chessfun.py`: custom library written for scraping and parsing training data
  - `SmoothBrainChess.py`: classes for the model and engine, functions for training the model
  
