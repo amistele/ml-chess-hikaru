@@ -65,10 +65,15 @@ class SBCEngine:
                         corr_node_str = 'e8c8'
 
                 # IF MOVE IS ILLEGAL, THE REWRITE NODE OUTPUT
-                moves_uci = [mv.uci() for mv in board.legal_moves]
-                if corr_node_str not in moves_uci:
+                legal_moves = [mv.uci() for mv in board.legal_moves]
+                n_legal_moves = len(legal_moves)
+                if corr_node_str not in legal_moves:
                     #print(corr_node_str, moves_uci)
                     model_output[x] = -999.0
+
+                # IF THERE ARE FEWER LEGAL MOVES THAN MOVES REQUESTED, REDUCE NUMBER OF MOVES RETURNED
+                if n_legal_moves < n:
+                    n = n_legal_moves
 
         # GET TOP K MOST LIKELY
         values, indices = torch.topk(model_output, n)
