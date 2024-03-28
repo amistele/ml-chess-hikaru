@@ -12,7 +12,7 @@ class SBCEngine:
 
         # INITIALIZE THE ENGINE, SET UP TO RUN (NOT TRAIN)
         self.model = SmoothBrainChess(n_nodes, True)
-        self.model.load_state_dict(torch.load(weights_file))
+        self.model.load_state_dict(torch.load(weights_file, map_location=torch.device('cpu')))
         self.model.eval()
         print('Engine initialized using n='+str(n_nodes)+' and weights @ '+weights_file)
 
